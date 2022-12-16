@@ -13,7 +13,7 @@ By collinding photons and proton not only η′ are created. There are also 2π0
 These mesons can decay in two or more photons and therefore appear in this analysis. If an meson decays to e.g. 4 photons it is possible that 2 photons do not hit any detector so the event looks like an two photon event.
 
 ## Solution
-A neural network which knows reaction paramters like energy, azimuthal and polar angle of the proton and the two photons in the final can than decide whether an η′ meson or some other meson was created.
+A neural network which knows reaction paramters like energy, azimuthal and polar angle of the proton and the two photons in the final can than decide whether an η′ meson or some other meson was created. Monte Carlo simulations were used to train the neural net.
 
 ## Result
 As a result of this type of analysis the neural net was able to detect 74% of all η′. This doen't seem much in the first place but with classical extraction methods there remain as much η′ mesons as other mesons. A signal-to-noise-ratio (SNR) can be determined by deviding the number of all η′ mesons by the number of all other (noise) mesons (2π0, η, ω). This leads to a much higher SNR using the neural network.
@@ -67,5 +67,8 @@ The real cannot and should not be splitted up.
 ## 3 Use the Neural Net
 
 After creating the text-files open the [particleAI.py](particleAI.py) file to set up some last things. 
+
+Note:
+> the method *invmass(self, data)* require two particles with parameters (e.g. energy) at the right columns in *data*. If you've got more particles in your analysis you need to edit these functions.
 
 --- WORKING IN PROGRESS ---
