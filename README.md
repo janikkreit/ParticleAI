@@ -15,11 +15,11 @@ There mesons can decay in two or more photons and therefore appear in this analy
 A neural net which knows reaction paramters like energy, azimuthal and polar angle of the proton and the two photons in the final can than decide whether an η′ meson or some other meson was created in an single event.
 
 ## Result
-As a result of this type of analysis the neural net was able to detect 74 % of all η′. This doen't seem much in the first place but with classic analysis you can only extract events where there are as many other mesons as the η′ meson. A signal-to-noise-ratio can be determined by deviding the number of all η′ mesons by the number of all other noise-mesons (2π0, η, ω). This leads to 
+As a result of this type of analysis the neural net was able to detect 74 % of all η′. This doen't seem much in the first place but with classic analysis you can only extract events where there are as many other mesons as the η′ meson. A signal-to-noise-ratio (SNR) can be determined by deviding the number of all η′ mesons by the number of all other noise-mesons (2π0, η, ω). This leads to 
 
-| Classic | Neural Net |
-| --- | --- |
-| 1.34 | 2.90 |
+|| Classic | Neural Net |
+| --- | --- | --- |
+| SNR | 1.34 | 2.90 |
 
 
 --- WORKING IN PROGRESS ---
