@@ -32,7 +32,7 @@ class ParticleAI(object):
         self.Batch = batch
         self.Saperate_weights = saperate_weights
 
-
+    # get number of entries in a txt file
     def get_size(self, path, files):
         size_list = np.zeros(len(files))
         for i in range(len(files)):
@@ -42,7 +42,7 @@ class ParticleAI(object):
             size_list[i] = count
         return size_list
         
-        
+    # plot the invariant mass of all particles 
     def show_raw_data(self):
         size = self.get_size(self.Path_MC, self.Files_MC)
         rows = (np.min(size/self.Ratio_MC)*self.Ratio_MC).astype(int)
@@ -69,7 +69,8 @@ class ParticleAI(object):
 
         fig.savefig("raw_data_mode-0.png")
 
-
+        
+    # load the monte carlo data and return arrays you can train/test the neural net
     def load_MC_data(self, test_size=0.3):
         print("\nloading MC data...")
         size = self.get_size(self.Path_MC, self.Files_MC)
@@ -99,6 +100,7 @@ class ParticleAI(object):
         return scaler, x_train_norm, x_train, x_test_norm, x_test, y_train, y_test
 
 
+    # load real data and return arrays you can run the neural net with
     def load_real_data(self, scaler):
         print("\nloading real data...")
 
@@ -124,6 +126,7 @@ class ParticleAI(object):
     #===========================================
     # NEURAL NET 
 
+    # train the neural net
     def run_neuralnet(self, x_train, y_train, neurons=[100,50], epochs=100, batch=0.005, tol=1e-6, loss="LogCosh", optimizer="Adam"):
         batchsize = int(batch*len(x_train))
 
@@ -147,6 +150,7 @@ class ParticleAI(object):
     #===========================================
     # ANALYSATION
 
+    # return the invariant mass of two photons
     def invmass(self, data):
         E1 = data[:,2]
         E2 = data[:,3]
@@ -159,7 +163,7 @@ class ParticleAI(object):
 
         return np.sqrt(2 *E1 *E2 *(1 - cos_a))  
         
-
+    # calculate the accuracy of the trained neural net
     def calc_accuracy(self, model, x_test, y_test):
         y_pred = np.round(model.predict(x_test)).astype(int).flatten()
         acc = np.round(100*np.sum(y_test == y_pred)/len(y_test),2)
@@ -175,6 +179,7 @@ class ParticleAI(object):
     #==========================================
     # PLOTS
 
+    # plt a cufusion plot to get the accuracies of the neural net
     def confusion_plot(self, test, pred):
         cf_matrix = confusion_matrix(test, pred)
         
@@ -212,6 +217,7 @@ class ParticleAI(object):
         fig.savefig("confusion_plot_mode-1-2.png", dpi=300)
 
 
+    # plot the invariant mass of two photons of the monte carlo
     def plot_invmass_MC(self, x_test, y_test, y_pred):	
         invmass_etap = self.invmass(x_test[y_test==1,:])
         invmass_bg = self.invmass(x_test[y_test==0,:])
@@ -240,6 +246,7 @@ class ParticleAI(object):
         fig.savefig("MC_invariant_mass_mode-1-2.png", dpi=300)
         
         
+    # plot the invariant mass of two photons of the real data
     def plot_invmass_real(self, x_test, y_pred, weights):	  
         invmass_signal_pred = self.invmass(x_test[y_pred==1,:])
         invmass_bg_pred = self.invmass(x_test[y_pred==0,:])
@@ -262,7 +269,7 @@ class ParticleAI(object):
         fig.savefig("predicted_invariant_mass_mode-3.png", dpi=300)
 
 
-
+    # run defferent methods
     def run(self, mode):
         t0 = time.time()
 
