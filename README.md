@@ -1,10 +1,10 @@
 # ParticleAI
 
 This program was developed to enhance the signal-to-noise-ratio in particle physics analysis.
-You can use my [Bachelorthesis](Bachelorthesis_Janik_Kreit.pdf) as a further documentation of this work.
+You can use [Bachelorthesis_Janik_Kreit.pdf](Bachelorthesis_Janik_Kreit.pdf) as a further documentation of my work.
 
-In an applied experiment at the ELSA (ELectron Stretcher
-Accelerator) and the CBELSA/TAPS (https://www.cb.uni-bonn.de/) at the university in Bonn accelerated electrons (up to an energy of 3 GeV) were used to produce photons via bremsstrahung. These photons collide with a target existing of hydrogen.
+In an applied experiment at the [ELSA](https://www-elsa.physik.uni-bonn.de/) (ELectron Stretcher
+Accelerator) and the [CBELSA/TAPS](https://www.cb.uni-bonn.de/) at the university in Bonn accelerated electrons (up to an energy of 3 GeV) were used to produce photons via bremsstrahung. These photons collide with a target existing of hydrogen.
 A reaction was invastigated where photons and protons produce the η′ meson. That means: ɣp -> pη′.
 To extract events in which an η′ meson was created only ɣɣp final states were used. (An η′ meson decays with 2.3% to two photons.)
 
@@ -24,7 +24,7 @@ As a result of this type of analysis the neural net was able to detect 74% of al
 
 
 
-# Quick Start
+# Quick Start Guide
 ## 1 Setup
 
 In order to use this program you need to have Python 3 installed.
@@ -44,7 +44,7 @@ The Simulation data as well as the real, measured data are stored in .root files
 
 The Neural Net need access to parameters of a single event. That means the text-file must contain your single reaction in rows and the parameter in columns. You can use any parameter you might think is important for the NN. Most important are energies and flight directions (i.e. polar and azimuthal angles) of the measured particles in your detector-system as well as beam energy. Further parameter can be added to improve the accuracy of the Network.
 
-If you don't know how to create the .txt files you can use the convert_tree_to_txt.C program. For this to work a ROOT Tree is required in your .root files.
+If you don't know how to create the .txt files you can use the [convert_tree_to_txt.C](convert_tree_to_txt.C) program. For this to work a ROOT Tree is required in your .root files.
 You will need to change some things before it will work for you.
 - convert_tree_to_txt()
   - path to the root files and names of the included trees
@@ -66,6 +66,6 @@ The real cannot and should not be splitted up.
 
 ## 3 Use the Neural Net
 
-After creating the text-files open the particleAI.py file to set up some last things. 
+After creating the text-files open the [particleAI.py](particleAI.py) file to set up some last things. 
 
 --- WORKING IN PROGRESS ---
