@@ -5,11 +5,11 @@ import numpy as np
 # SETTINGS
 
 # DATA
-path_MC = "/hiskp3/kreit/data/data_higher_energy/" # Path to your Monte Carlo Files (Do not forget a slash at the end)
+path_MC = "/data/monte_carlo_data/" # Path to your Monte Carlo Files (Do not forget a slash at the end)
 files_MC = ["data_etap_cut.txt", "data_eta_cut.txt", "data_pi0_cut.txt", "data_omega_cut.txt", "data_2pi0_cut.txt", "data_pi0eta_cut.txt"] # Only the first file may contain signal events. Add as many background files as you want.
 ratio_MC = np.array([0.0031, 0.0793, 0.896, 0.0061, 0.0126, 0.0027]) # Ratio of your particles. This is very important to successfully train the NN.
 
-path_real = "/hiskp3/kreit/data/data_real/" # Path to the real data (Do not forget a slash at the end)
+path_real = "/data/real_data/" # Path to the real data (Do not forget a slash at the end)
 files_real = ["data00.txt","data01.txt","data02.txt","data03.txt"] # All files of the real data
 
 
@@ -35,5 +35,6 @@ mode = 0
 #================================================================
 # MAIN 
 
-neuralnet = ParticleAI(path_MC, files_MC, ratio_MC, path_real, files_real, neurons=neurons, epochs=epochs, batch=batch, saperate_weights=saperate_weights)
-neuralnet.run(mode)
+if __name__ == "__main__":
+  neuralnet = ParticleAI(path_MC, files_MC, ratio_MC, path_real, files_real, neurons=neurons, epochs=epochs, batch=batch, saperate_weights=saperate_weights)
+  neuralnet.run(mode)
