@@ -1,6 +1,27 @@
 # ParticleAI
 
-This program was developed to enhance the signal-to-noise-ratio in particle physics analysis. 
+This program was developed to enhance the signal-to-noise-ratio in particle physics analysis.
+
+In an applied experiment at the ELSA (ELectron Stretcher
+Accelerator) and the CBELSA/TAPS (https://www.cb.uni-bonn.de/) at the university in Bonn accelerated electrons (up to an energy of 3 GeV) were used to produce photons via bremsstrahung. These photons collide with a target existing of hydrogen.
+A reaction was invastigated where photons and protons produce the η′ meson. That means: ɣp -> pη′.
+To extract events in which an η′ meson was created only ɣɣp final states were used. (An η′ meson decays with 2.3% to two photons.)
+
+## Problem
+By collinding photons and proton not only η′ are created. There are also 2π0, η and ω mesons which overlays the wanted reaction.
+There mesons can decay in two or more photons and therefore appear in this analysis. If an meson deays to e.g. 4 photons it is possible that 2 photons do not hit any detector so the event looks like an two photon event.
+
+## Solution
+A neural net which knows reaction paramters like energy, azimuthal and polar angle of the proton and the two photons in the final can than decide whether an η′ meson or some other meson was created in an single event.
+
+## Result
+As a result of this type of analysis the neural net was able to detect 74 % of all η′. This doen't seem much in the first place but with classic analysis you can only extract events where there are as many other mesons as the η′ meson. A signal-to-noise-ratio can be determined by deviding the number of all η′ mesons by the number of all other noise-mesons (2π0, η, ω). This leads to 
+
+| Classic | Neural Net |
+| --- | --- |
+| 1.34 | 2.90 |
+
+
 --- WORKING IN PROGRESS ---
 
 
