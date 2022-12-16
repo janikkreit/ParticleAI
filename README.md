@@ -9,25 +9,22 @@ To extract events in which an η′ meson was created only ɣɣp final states we
 
 ## Problem
 By collinding photons and proton not only η′ are created. There are also 2π0, η and ω mesons which overlays the wanted reaction.
-There mesons can decay in two or more photons and therefore appear in this analysis. If an meson deays to e.g. 4 photons it is possible that 2 photons do not hit any detector so the event looks like an two photon event.
+These mesons can decay in two or more photons and therefore appear in this analysis. If an meson decays to e.g. 4 photons it is possible that 2 photons do not hit any detector so the event looks like an two photon event.
 
 ## Solution
-A neural net which knows reaction paramters like energy, azimuthal and polar angle of the proton and the two photons in the final can than decide whether an η′ meson or some other meson was created in an single event.
+A neural network which knows reaction paramters like energy, azimuthal and polar angle of the proton and the two photons in the final can than decide whether an η′ meson or some other meson was created.
 
 ## Result
-As a result of this type of analysis the neural net was able to detect 74 % of all η′. This doen't seem much in the first place but with classic analysis you can only extract events where there are as many other mesons as the η′ meson. A signal-to-noise-ratio (SNR) can be determined by deviding the number of all η′ mesons by the number of all other noise-mesons (2π0, η, ω). This leads to 
+As a result of this type of analysis the neural net was able to detect 74% of all η′. This doen't seem much in the first place but with classical extraction methods there remain as much η′ mesons as other mesons. A signal-to-noise-ratio (SNR) can be determined by deviding the number of all η′ mesons by the number of all other (noise) mesons (2π0, η, ω). This leads to a much higher SNR using the neural network.
 
 || Classic | Neural Net |
 | --- | --- | --- |
 | SNR | 1.34 | 2.90 |
 
 
---- WORKING IN PROGRESS ---
 
-
-
-
-# 1 Setup
+# Quick Start
+## 1 Setup
 
 In order to use this program you need to have Python 3 installed.
 Furthermore some Python-Packages are required:
@@ -40,7 +37,7 @@ Furthermore some Python-Packages are required:
  ROOT is commonly used in particle physics for data analysis so it is assumed to be installed too.
 
 
-# 2 Preparation of data
+## 2 Preparation of data
 
 The Simulation data as well as the real, measured data are stored in .root files. Python cannot read these files so you will convert the data to .txt files to use it.
 
@@ -66,6 +63,8 @@ If you changed everything you can run it with root convert_tree_to_txt.C
 The simulation files must saperated in signal oder background files or use one file for each particle in the intermediate state.
 The real cannot and should not be splitted up.
 
-# 3 Use the Neural Net
+## 3 Use the Neural Net
 
 After creating the text-files open the particleAI.py file to set up some last things. 
+
+--- WORKING IN PROGRESS ---
