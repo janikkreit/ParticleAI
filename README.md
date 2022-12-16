@@ -9,7 +9,7 @@ A reaction was invastigated where photons and protons produce the η′ meson. T
 To extract events in which an η′ meson was created only ɣɣp final states were used. (An η′ meson decays with 2.3% to two photons.)
 
 ## Problem
-By collinding photons and proton not only η′ are created. There are also 2π0, η and ω mesons which overlays the wanted reaction.
+By collinding photons and protons not only η′ are created. There are also 2π0, η and ω mesons which overlays the wanted reaction.
 These mesons can decay in two or more photons and therefore appear in this analysis. If an meson decays to e.g. 4 photons it is possible that 2 photons do not hit any detector so the event looks like an two photon event.
 
 ## Solution
