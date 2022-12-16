@@ -1,6 +1,7 @@
 # ParticleAI
 
 This program was developed to enhance the signal-to-noise-ratio in particle physics analysis.
+You can use my [Bachelorthesis](Bachelorthesis_Janik_Kreit.pdf) as a further documentation of this work.
 
 In an applied experiment at the ELSA (ELectron Stretcher
 Accelerator) and the CBELSA/TAPS (https://www.cb.uni-bonn.de/) at the university in Bonn accelerated electrons (up to an energy of 3 GeV) were used to produce photons via bremsstrahung. These photons collide with a target existing of hydrogen.
