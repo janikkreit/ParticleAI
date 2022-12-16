@@ -66,9 +66,10 @@ The real cannot and should not be splitted up.
 
 ## 3 Use the Neural Net
 
-After creating the text-files open the [particleAI.py](particleAI.py) file to set up some last things. 
+After creating the text-files open the [main.py](main.py) file to set up some last things.
+- specify the *path* and *files* of your data (.txt) files
+- *ratio_MC* defines how often a specific event occurs relative to other. This is **very important** for a successful training of the neural net. See (Bachelorthesis_Janik_Kreit.pdf) Chapter 5.3.1 (Table 5.2 for more information.
+- the settings for the neural net can changed for further improvements
 
-Note:
-> the method *invmass(self, data)* require two particles with parameters (e.g. energy) at the right columns in *data*. If you've got more particles in your analysis you need to edit these functions.
-
---- WORKING IN PROGRESS ---
+**Note**
+> the method *invmass(self, data)* in [particleAI.py](particleAI.py) require two particles with parameters (e.g. energy) at the right columns in *data*. If you've got more particles in your analysis you need to edit this function.
