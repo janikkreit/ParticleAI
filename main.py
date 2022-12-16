@@ -26,7 +26,7 @@ saperate_weights = True # If you've got timeweights in your real data, put them 
 # CHOOSE THE MODE
 # 0: Show your MC data to test your ratio_MC and get a fancy pic.
 # 1: Train and test your Neural Net with the MC. You need this to get your model and its accuracy.
-# 2: Same as 0 but without training. (saves time)
+# 2: Same as 1 but without training. (saves time)
 # 3: Use your trained Neural Net on the real data.
 
 mode = 0
